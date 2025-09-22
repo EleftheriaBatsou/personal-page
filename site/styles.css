@@ -98,6 +98,26 @@ a:hover { color: var(--primary); }
 .hero-content {
   max-width: 1100px;
   margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  align-items: center;
+  gap: 24px;
+}
+
+.hero-text { align-self: center; }
+
+.hero-photo {
+  display: flex;
+  justify-content: center;
+}
+
+.avatar {
+  width: min(320px, 80%);
+  height: auto;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.35);
+  background: #0c121b;
 }
 
 .hero h1 {
@@ -161,6 +181,22 @@ a:hover { color: var(--primary); }
 .section h2 {
   font-size: 28px;
   margin: 0 0 8px;
+}
+
+.upcoming {
+  margin-top: 24px;
+  padding-top: 8px;
+  border-top: 1px solid var(--border);
+}
+
+.upcoming h3 {
+  margin: 0 0 8px;
+}
+
+.upcoming-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 12px;
 }
 
 .cards {
@@ -240,6 +276,8 @@ a:hover { color: var(--primary); }
   .nav-links { display: none; }
   .nav-links.open { display: flex; flex-direction: column; gap: 8px; position: absolute; right: 12px; top: 56px; padding: 12px; background: #0b0d12; border: 1px solid var(--border); border-radius: 12px; }
   .hero { padding: 64px 16px 40px; }
+  .hero-content { grid-template-columns: 1fr; }
   .cards { grid-template-columns: 1fr; }
   .links-grid { grid-template-columns: 1fr; }
+  .avatar { width: 100%; max-width: 360px; }
 }
