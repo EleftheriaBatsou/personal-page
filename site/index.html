@@ -32,7 +32,7 @@
           <p class="tagline">Community builder, UX, speaker, content creator. Based in Thessaloniki, Greece.</p>
           <div class="hero-actions">
             <a href="#contact" class="btn primary">Get in touch</a>
-            <a href="#speaking" class="btn">Upcoming talks</a>
+            <a href="https://www.meetup.com/skg-js/" target="_blank" rel="noopener" class="btn">Upcoming talks</a>
           </div>
           <div class="social">
             <a href="https://github.com/EleftheriaBatsou" target="_blank" rel="noopener">GitHub</a>
@@ -43,7 +43,7 @@
           </div>
         </div>
         <div class="hero-photo">
-          <img src="./assets/profile.jpg" alt="Eleftheria Batsou speaking" class="avatar">
+          <img src="https://avatars.githubusercontent.com/u/17240273?v=4" alt="Eleftheria Batsou speaking" class="avatar">
         </div>
       </div>
     </section>
@@ -182,6 +182,23 @@
     navToggle.addEventListener('click', () => {
       navLinks.classList.toggle('open');
     });
+
+    // Shrink header on scroll
+    const header = document.querySelector('.header');
+    const root = document.documentElement;
+    const updateHeader = () => {
+      const y = window.scrollY || document.documentElement.scrollTop;
+      if (y > 80) {
+        header.classList.add('shrink');
+        root.style.setProperty('--nav-open-top', '44px');
+      } else {
+        header.classList.remove('shrink');
+        root.style.setProperty('--nav-open-top', '56px');
+      }
+    };
+    window.addEventListener('scroll', updateHeader, { passive: true });
+    updateHeader();
+
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
